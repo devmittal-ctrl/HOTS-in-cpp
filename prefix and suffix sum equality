@@ -1,0 +1,29 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+bool logic(vector <int> &v){
+   int sum_t=0,sum_p=0;
+   for(int i=0;i<v.size();i++){
+      sum_t+=v[i];
+   }  
+   for(int i=0;i<v.size();i++){
+      sum_p+=v[i];
+      int sum_s=sum_t-sum_p;
+      if(sum_s==sum_p) return true;
+   }
+   return false;
+}
+int main(){
+  // checking the perfix sum is equal to suufix sum of the array
+  int n;
+  cout<<"enter the number of the elements you want to enter in the array : ";
+  cin>>n;
+  vector <int> v;
+  for(int i=0;i<n;i++){
+   int ele;cin>>ele;
+   v.push_back(ele);
+   }
+  cout<<logic(v);
+  
+   return 0;
+}
